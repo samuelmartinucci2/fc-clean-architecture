@@ -21,7 +21,7 @@ export default class ProductYupValidator
             price: entity.price,
           },
           {
-            abortEarly: false,
+            abortEarly: false
           }
         );
     } catch (errors) {

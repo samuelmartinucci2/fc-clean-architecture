@@ -19,6 +19,12 @@ describe("Product unit tests", () => {
     }).toThrowError("product: Price must be greater than zero");
   });
 
+  it("should throw error accumulating messages when multiple fields are wrong", () => {
+    expect(() => {
+      const product = new Product("", "", -1);
+    }).toThrowError("product: Id is required,product: Name is required,product: Price must be greater than zero");
+  });
+
   it("should change name", () => {
     const product = new Product("123", "Product 1", 100);
     product.changeName("Product 2");
